@@ -1,6 +1,6 @@
 use core::fmt;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct Clock {
     hours: i32,
     minutes: i32,
@@ -8,44 +8,20 @@ pub struct Clock {
 
 impl Clock {
     pub fn new(hours: i32, minutes: i32) -> Self {
-        let mut h = hours % 24;
-        let mut m = minutes % 60;
-
-        if h < 0 {
-            h += 24;
-        }
-        if minutes >= 60 {
-            h += minutes / 60_i32;
-            h %= 24;
-        }
-        if minutes < 0 {
-            h = h - (1 + minutes.abs() / 60_i32);
-            h %= 24;
-            m += 60;
-        }
-
         Self {
-            hours: h,
-            minutes: m,
+            hours: (hours + minutes.div_euclid(60)).rem_euclid(24),
+            minutes: minutes.rem_euclid(60),
         }
     }
 
     pub fn add_minutes(&self, minutes: i32) -> Self {
-        let m = (self.minutes + minutes) % 60;
-        let h = self.hours + ((self.minutes + minutes) / 60_i32);
-        Self::new(h, m)
+        Self::new(self.hours, self.minutes + minutes)
     }
 }
 
 impl fmt::Display for Clock {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:02}:{:02}", self.hours, self.minutes)
-    }
-}
-
-impl PartialEq for Clock {
-    fn eq(&self, other: &Self) -> bool {
-        self.hours == other.hours && self.minutes == other.minutes
     }
 }
 
