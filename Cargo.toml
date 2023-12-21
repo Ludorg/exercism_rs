@@ -2,5 +2,6 @@
 resolver = "2"
 members = [
     "exercism/gigaseconds",
-    "exercism/clock"
+    "exercism/clock",
+    "exercism/rev_string"
 ]
