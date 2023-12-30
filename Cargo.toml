@@ -4,5 +4,6 @@ members = [
     "exercism/gigaseconds",
     "exercism/clock",
     "exercism/rev_string",
-    "exercism/armstrong"
+    "exercism/armstrong",
+    "exercism/leap_year"
 ]
