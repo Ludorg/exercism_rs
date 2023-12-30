@@ -10,13 +10,13 @@ fn is_prime(n: u32) -> bool {
     true
 }
 
-static mut prime_list: Vec<u32> = vec![];
+static mut PRIME_LIST: Vec<u32> = vec![];
 
 fn init_prime_list() {
     for n in 2..=1_000_000 {
         if is_prime(n) {
             unsafe {
-                prime_list.push(n);
+                PRIME_LIST.push(n);
             }
             println!("{n} is prime")
         }
@@ -25,18 +25,18 @@ fn init_prime_list() {
 
 pub fn nth(n: u32) -> u32 {
     unsafe {
-        if prime_list.is_empty() {
+        if PRIME_LIST.is_empty() {
             init_prime_list();
         }
     }
     println!("What is the 0-indexed {n}th prime number?");
     let r: u32;
     unsafe {
-        r = prime_list[n as usize];
+        r = PRIME_LIST[n as usize];
     }
     r
 }
-
+#[cfg(test)]
 mod tests {
 
     use super::*;
