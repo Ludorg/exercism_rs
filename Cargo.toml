@@ -7,5 +7,6 @@ members = [
     "exercism/armstrong",
     "exercism/leap_year",
     "exercism/diff_square",
-    "exercism/prime_nth"
+    "exercism/prime_nth",
+    "exercism/beer_song",
 ]
