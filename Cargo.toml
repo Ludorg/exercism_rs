@@ -9,4 +9,5 @@ members = [
     "exercism/diff_square",
     "exercism/prime_nth",
     "exercism/beer_song",
+    "exercism/grains",
 ]
