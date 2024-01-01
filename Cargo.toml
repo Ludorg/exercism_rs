@@ -13,4 +13,5 @@ members = [
     "exercism/pascal_triangle",
     "exercism/prime_factor",
     "exercism/high_scores",
+    "exercism/isbn",
 ]
