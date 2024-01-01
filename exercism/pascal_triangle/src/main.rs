@@ -6,9 +6,12 @@ impl PascalsTriangle {
     pub fn new(row_count: u32) -> Self {
         let mut rows = vec![];
 
-        for n in 0..row_count {
-            let pow_11 = 11_u32.pow(n);
-            rows.push(number_to_digits(pow_11));
+        for i in 0..row_count {
+            let mut row: Vec<u32> = vec![];
+            for j in 0..=i {
+                row.push(binomial_coefficient(i, j));
+            }
+            rows.push(row);
         }
         Self { rows }
     }
@@ -17,22 +20,17 @@ impl PascalsTriangle {
         self.rows.clone()
     }
 }
-
-fn number_to_digits(number: u32) -> Vec<u32> {
-    let mut ret = vec![];
-    let mut n = number;
-    while n != 0 {
-        ret.push(n % 10);
-        n /= 10;
-    }
-    ret.reverse();
-    ret
+pub fn factorial(num: u64) -> u64 {
+    (1..=num).product()
 }
 
+fn binomial_coefficient(n: u32, k: u32) -> u32 {
+    (factorial(n as u64) / (factorial(k as u64) * factorial((n - k) as u64))) as u32
+}
 fn main() {
-    println!("digits in num {:?}", number_to_digits(123456));
-    println!("digits in num {:?}", number_to_digits(88771974));
-
+    println!("factorial(6)={}", factorial(6));
+    println!("factorial(1)={}", factorial(1));
+    println!("factorial(4)={}", factorial(4));
     let pt = PascalsTriangle::new(4);
     println!("{:?}", pt.rows());
 
