@@ -11,4 +11,5 @@ members = [
     "exercism/beer_song",
     "exercism/grains",
     "exercism/pascal_triangle",
+    "exercism/prime_factor"
 ]
