@@ -15,4 +15,5 @@ members = [
     "exercism/high_scores",
     "exercism/isbn",
     "exercism/roman",
+    "exercism/matching_brackets"
 ]
