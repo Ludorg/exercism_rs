@@ -1,20 +1,20 @@
 [workspace]
 resolver = "2"
 members = [
-    "exercism/gigaseconds",
-    "exercism/clock",
-    "exercism/rev_string",
-    "exercism/armstrong",
-    "exercism/leap_year",
-    "exercism/diff_square",
-    "exercism/prime_nth",
-    "exercism/beer_song",
-    "exercism/grains",
-    "exercism/pascal_triangle",
-    "exercism/prime_factor",
-    "exercism/high_scores",
-    "exercism/isbn",
-    "exercism/roman",
-    "exercism/matching_brackets",
-    "exercism/raindrops"
+    "gigaseconds",
+    "clock",
+    "rev_string",
+    "armstrong",
+    "leap_year",
+    "diff_square",
+    "prime_nth",
+    "beer_song",
+    "grains",
+    "pascal_triangle",
+    "prime_factor",
+    "high_scores",
+    "isbn",
+    "roman",
+    "matching_brackets",
+    "raindrops"
 ]
