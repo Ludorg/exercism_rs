@@ -16,5 +16,6 @@ members = [
     "isbn",
     "roman",
     "matching_brackets",
-    "raindrops"
+    "raindrops",
+    "sum_multiples"
 ]
