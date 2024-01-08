@@ -1,9 +1,26 @@
 pub fn sum_of_multiples(limit: u32, factors: &[u32]) -> u32 {
-    todo!("Sum the multiples of all of {factors:?} which are less than {limit}")
+    let mut multiples: Vec<u32> = vec![];
+    for item in factors {
+        let mut n = 1;
+        loop {
+            if *item == 0 {
+                break;
+            }
+            if item * n >= limit {
+                break;
+            }
+            multiples.push(item * n);
+            n += 1;
+        }
+        println!("{item} / {:?}", multiples);
+    }
+    multiples.sort();
+    multiples.dedup();
+    multiples.iter().sum()
 }
 
 fn main() {
-    println!("Hello, world!");
+    assert_eq!(sum_of_multiples(20, &[3, 5]), 78);
 }
 
 #[cfg(test)]
