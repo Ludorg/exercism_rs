@@ -17,5 +17,6 @@ members = [
     "roman",
     "matching_brackets",
     "raindrops",
-    "sum_multiples"
+    "sum_multiples",
+    "collatz"
 ]
